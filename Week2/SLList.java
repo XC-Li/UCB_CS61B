@@ -1,5 +1,5 @@
 public class SLList {
-    public class IntNode {
+    private class IntNode {
         public int item;
         public IntNode next;
         public IntNode(int i, IntNode n) {
@@ -8,31 +8,38 @@ public class SLList {
         }
     }
 
-    private IntNode first;
+    private IntNode setinel;
     private int size;
 
-    public SLList(int x) {
+    public SLList() {
 //        first = new IntNode(x, null);
 //        size = 1;
-        first = null;
+        setinel = new IntNode(72,null);
         size = 0;
+    }
+
+    public SLList(int x) {
+       setinel = new IntNode(72, null);
+       setinel.next = new IntNode(x,null);
+       size = 1;
+
     }
 
     /** Adds an item to the front of the list. */
     public void addFirst(int x) {
-        first = new IntNode(x, first);
+        setinel.next = new IntNode(x, setinel.next);
         size ++;
     }
 
     /** Retrieves the front item from the list. */
     public int getFirst() {
-        return first.item;
+        return setinel.next.item;
     }
 
     /** Adds an item to the end of the list. */
     public void addLast(int x) {
         /* Your Code Here! */
-        IntNode pointer = first;
+        IntNode pointer = setinel;
         while (pointer.next != null){
             pointer = pointer.next;
         }
