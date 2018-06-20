@@ -1,5 +1,7 @@
+//Discussion 3 SLList
+// https://sp18.datastructur.es/materials/discussion/disc03.pdf
+
 public class Dis3SLList {
-    // Discussion 3 SLList
 private class IntNode {
 public int item;
 public IntNode next;
