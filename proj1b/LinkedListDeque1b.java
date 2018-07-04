@@ -116,6 +116,7 @@ public class LinkedListDeque1b<T> implements Deque<T>{
         L.addFirst(2);
         L.printDeque();
 //        System.out.println(L.get(2));
+        L.removeFirst();
         System.out.println(L.getRecursive(1));
     }
 }

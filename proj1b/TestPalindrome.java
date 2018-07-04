@@ -15,5 +15,36 @@ public class TestPalindrome {
         }
         assertEquals("persiflage", actual);
     }
-    //Uncomment this class once you've created your Palindrome class.
+
+    @Test
+    public void testIsPalindrome(){
+        assertTrue(palindrome.isPalindrome("noon"));
+        assertFalse(palindrome.isPalindrome("dog"));
+        assertTrue(palindrome.isPalindrome("a"));
+        assertTrue(palindrome.isPalindrome(""));
+        assertFalse(palindrome.isPalindrome("Ana"));
+    }
+
+    @Test
+    public void testIsPalindromeOffByOne(){
+        CharacterComparator cc = new OffByOne();
+        assertTrue(palindrome.isPalindrome("a", cc));
+        assertTrue(palindrome.isPalindrome("", cc));
+        assertTrue(palindrome.isPalindrome("ab", cc));
+        assertTrue(palindrome.isPalindrome("adb", cc));
+        assertFalse(palindrome.isPalindrome("ada", cc));
+    }
+
+    @Test
+    public void testIsPalindromeOffByN(){
+        CharacterComparator cc = new OffByN(1);
+        assertTrue(palindrome.isPalindrome("a", cc));
+        assertTrue(palindrome.isPalindrome("", cc));
+        assertTrue(palindrome.isPalindrome("ab", cc));
+        assertTrue(palindrome.isPalindrome("adb", cc));
+        assertFalse(palindrome.isPalindrome("ada", cc));
+    }
+
 }
+
+
